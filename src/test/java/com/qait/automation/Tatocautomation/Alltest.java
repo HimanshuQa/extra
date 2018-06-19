@@ -21,21 +21,21 @@ public class Alltest {
     	grid = new GridGate(this.web);
     }
     
-//    @AfterClass
-//    public void end()
-//    {
-//    	this.web.close();
-//    }
+    @AfterClass
+    public void end()
+    {
+    	this.web.close();
+    }
     
-//    @Test(priority=0)
-//    public void test_grid_red_box()
-//    {
-//
-//    	Assert.assertTrue(grid.click_on_redbox(), "Error page does not displayed");
-//    	
-//    }
+    @Test(priority=1)
+    public void test_grid_red_box()
+    {
+
+    	Assert.assertTrue(grid.click_on_redbox(), "Error page does not displayed");
+    	
+    }
     
-    @Test
+    @Test(priority=2)
     public void test_grid_green_box()
     {
 

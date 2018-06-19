@@ -12,14 +12,14 @@ public class FrameDungeon {
 	
 	private WebDriver web;
 	public FrameDungeon(WebDriver web)
-	{
-		
+	{		
 		this.web = web;
+		PageFactory.initElements(this.web, this);
+
 	}
 	
 	public String isDisplayed()
 	{
-		PageFactory.initElements(this.web, this);
 		return Heading.getText();
 	}
 
