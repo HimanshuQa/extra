@@ -2,23 +2,19 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3464" started-at="2018-06-19T10:37:03Z" finished-at="2018-06-19T10:37:07Z">
+  <suite name="Default suite" duration-ms="2496" started-at="2018-06-19T12:30:46Z" finished-at="2018-06-19T12:30:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3464" started-at="2018-06-19T10:37:03Z" finished-at="2018-06-19T10:37:07Z">
+    <test name="Default test" duration-ms="2496" started-at="2018-06-19T12:30:46Z" finished-at="2018-06-19T12:30:48Z">
       <class name="com.qait.automation.Tatocautomation.Alltest">
-        <test-method status="PASS" signature="start()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="start" is-config="true" duration-ms="2213" started-at="2018-06-19T16:07:03Z" finished-at="2018-06-19T16:07:05Z">
+        <test-method status="PASS" signature="start()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@4f933fd1]" name="start" is-config="true" duration-ms="1027" started-at="2018-06-19T18:00:46Z" finished-at="2018-06-19T18:00:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="testGreenBox()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="testGreenBox" duration-ms="1179" started-at="2018-06-19T16:07:05Z" finished-at="2018-06-19T16:07:07Z">
+        <test-method status="PASS" signature="test_grid_green_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@4f933fd1]" name="test_grid_green_box" duration-ms="1446" started-at="2018-06-19T18:00:47Z" finished-at="2018-06-19T18:00:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGreenBox -->
-        <test-method status="PASS" signature="end()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="end" is-config="true" duration-ms="63" started-at="2018-06-19T16:07:07Z" finished-at="2018-06-19T16:07:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- end -->
+        </test-method> <!-- test_grid_green_box -->
       </class> <!-- com.qait.automation.Tatocautomation.Alltest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

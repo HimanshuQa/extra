@@ -1,20 +1,32 @@
 package com.qait.automation.Tatocautomation;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Errorpage {
 	
-//	WebDriver web;
-//	public Errorpage(WebDriver web)
-//	{
-//		this.web = web;
-//	}
+
+	@FindBy(css="body > div > div.page > span")
+	private WebElement error_message;
 	
-	public static String getErrorMessage(WebDriver web)
+	WebDriver web;
+	
+	public Errorpage(WebDriver web){
+		
+		this.web = web;
+		PageFactory.initElements(this.web, this);
+	
+	}
+	
+	public  String getErrorMessage()
 	{
-		System.out.println("ASdasdsa");
-		return web.findElement(By.cssSelector("body > div > div.page > span")).getText();
+	
+		return error_message.getText();
 	}
 	
 }

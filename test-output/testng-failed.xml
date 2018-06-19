@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qait.automation.Tatocautomation.Alltest">
         <methods>
-          <include name="testGreenBox"/>
+          <include name="test_grid_red_box"/>
           <include name="start"/>
           <include name="end"/>
         </methods>
