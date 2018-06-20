@@ -6,8 +6,12 @@
       <class name="com.qait.automation.Tatocautomation.Alltest">
         <methods>
           <include name="test_grid_red_box"/>
+          <include name="click_proceed_without_draging"/>
+          <include name="test_grid_green_box"/>
+          <include name="test_repaint_box"/>
+          <include name="dragbox_to_somewhere"/>
           <include name="start"/>
-          <include name="end"/>
+          <include name="test_without_repaint_box"/>
         </methods>
       </class> <!-- com.qait.automation.Tatocautomation.Alltest -->
     </classes>

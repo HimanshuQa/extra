@@ -17,18 +17,18 @@ public class Alltest {
     
     @BeforeClass
     public void start() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\HIM\\Desktop\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/himanshuchaudhary/Downloads/chromedriver");
         this.web = new ChromeDriver();
         grid = new GridGate(this.web);
         frame = new FrameDungeon(this.web);
-        drag = new Drag(web);
+        drag = new Drag(this.web);
 
     }
 
-//    @AfterClass
-//    public void end() {
-//        this.web.close();
-//    }
+    @AfterClass
+    public void end() {
+        this.web.close();
+    }
 
     @Test()
     public void test_grid_red_box() {
@@ -62,9 +62,16 @@ public class Alltest {
     {
         Assert.assertTrue(drag.click_on_proceed_without_drag_drop());
     }
+    
     @Test(dependsOnMethods = {"click_proceed_without_draging"})
     public void dragbox_to_somewhere(){
 
         Assert.assertTrue(drag.moving_dragbox_to_somwhere_but_not_in_dropbox());
+    }
+    
+    @Test(dependsOnMethods = {"dragbox_to_somewhere"})
+    public void dragbox_in_dropbox(){
+
+        Assert.assertTrue(drag.dragbox_in_dropbox());
     }
 }

@@ -21,6 +21,7 @@ import org.testng.annotations.BeforeClass;
 public class Drag {
     
     Errorpage error;
+    Popup popup;
     
     @FindBy(css = "body > div > div.page > h1")
     private WebElement heading;
@@ -62,17 +63,31 @@ public class Drag {
     public Boolean moving_dragbox_to_somwhere_but_not_in_dropbox()
     {
         this.web.navigate().back();
-        System.out.println("sadsad"+ web.getCurrentUrl());
         initiaiseElements();
         Assert.assertEquals(dropbox.isDisplayed(), true);
         Assert.assertEquals(dragbox.isDisplayed(), true);
         
-        Actions actions = new Actions(web);
+        Actions actions = new Actions(this.web);
         actions.clickAndHold(dragbox).moveByOffset(130, 0).release().perform();
         proceed.click();
-        System.out.println("asdasd" + web.getCurrentUrl());
-        error = new Errorpage(web);
+        error = new Errorpage(this.web);
         return error.getErrorMessage().contains("The page you are looking for does not exist");
    
     }
+    
+    public Boolean dragbox_in_dropbox(){
+
+    	this.web.navigate().back();
+        initiaiseElements();
+        Assert.assertEquals(dropbox.isDisplayed(), true);
+        Assert.assertEquals(dragbox.isDisplayed(), true);
+        
+        Actions actions = new Actions(this.web);
+        actions.dragAndDrop(dragbox, dropbox).build().perform();
+        proceed.click();
+        popup = new Popup(this.web);
+        return popup.isDisplayed();
+
+    }
+
 }

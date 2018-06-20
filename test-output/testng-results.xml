@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3890" started-at="2018-06-19T12:47:58Z" finished-at="2018-06-19T12:48:02Z">
+  <suite name="Default suite" duration-ms="5173" started-at="2018-06-20T04:21:15Z" finished-at="2018-06-20T04:21:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3890" started-at="2018-06-19T12:47:58Z" finished-at="2018-06-19T12:48:02Z">
+    <test name="Default test" duration-ms="5173" started-at="2018-06-20T04:21:15Z" finished-at="2018-06-20T04:21:20Z">
       <class name="com.qait.automation.Tatocautomation.Alltest">
-        <test-method status="PASS" signature="start()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="start" is-config="true" duration-ms="1017" started-at="2018-06-19T18:17:58Z" finished-at="2018-06-19T18:17:59Z">
+        <test-method status="PASS" signature="start()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="start" is-config="true" duration-ms="782" started-at="2018-06-20T09:51:15Z" finished-at="2018-06-20T09:51:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="test_grid_red_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="test_grid_red_box" duration-ms="1407" started-at="2018-06-19T18:17:59Z" finished-at="2018-06-19T18:18:00Z">
+        <test-method status="PASS" signature="test_grid_red_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="test_grid_red_box" duration-ms="1819" started-at="2018-06-20T09:51:16Z" finished-at="2018-06-20T09:51:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_grid_red_box -->
-        <test-method status="PASS" signature="test_grid_green_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="test_grid_green_box" duration-ms="299" started-at="2018-06-19T18:18:00Z" finished-at="2018-06-19T18:18:01Z">
+        <test-method status="PASS" signature="test_grid_green_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="test_grid_green_box" duration-ms="245" started-at="2018-06-20T09:51:18Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.test_grid_red_box" finished-at="2018-06-20T09:51:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_grid_green_box -->
-        <test-method status="PASS" signature="end()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@1753acfe]" name="end" is-config="true" duration-ms="1156" started-at="2018-06-19T18:18:01Z" finished-at="2018-06-19T18:18:02Z">
+        <test-method status="PASS" signature="test_without_repaint_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="test_without_repaint_box" duration-ms="253" started-at="2018-06-20T09:51:18Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.test_grid_green_box" finished-at="2018-06-20T09:51:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_without_repaint_box -->
+        <test-method status="PASS" signature="test_repaint_box()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="test_repaint_box" duration-ms="1284" started-at="2018-06-20T09:51:18Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.test_without_repaint_box" finished-at="2018-06-20T09:51:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_repaint_box -->
+        <test-method status="PASS" signature="click_proceed_without_draging()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="click_proceed_without_draging" duration-ms="179" started-at="2018-06-20T09:51:20Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.test_repaint_box" finished-at="2018-06-20T09:51:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- click_proceed_without_draging -->
+        <test-method status="PASS" signature="dragbox_to_somewhere()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="dragbox_to_somewhere" duration-ms="245" started-at="2018-06-20T09:51:20Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.click_proceed_without_draging" finished-at="2018-06-20T09:51:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dragbox_to_somewhere -->
+        <test-method status="PASS" signature="dragbox_in_dropbox()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="dragbox_in_dropbox" duration-ms="285" started-at="2018-06-20T09:51:20Z" depends-on-methods="com.qait.automation.Tatocautomation.Alltest.dragbox_to_somewhere" finished-at="2018-06-20T09:51:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dragbox_in_dropbox -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.qait.automation.Tatocautomation.Alltest@2a2d45ba]" name="end" is-config="true" duration-ms="63" started-at="2018-06-20T09:51:20Z" finished-at="2018-06-20T09:51:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->
