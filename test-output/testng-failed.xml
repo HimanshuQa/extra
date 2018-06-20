@@ -5,13 +5,21 @@
     <classes>
       <class name="com.qait.automation.Tatocautomation.Alltest">
         <methods>
-          <include name="test_grid_red_box"/>
-          <include name="click_proceed_without_draging"/>
           <include name="test_grid_green_box"/>
           <include name="test_repaint_box"/>
-          <include name="dragbox_to_somewhere"/>
-          <include name="start"/>
+          <include name="test_dragbox_to_somewhere"/>
+          <include name="test_click_proceed_without_draging"/>
+          <include name="test_proceed_without_launching_window"/>
+          <include name="end"/>
           <include name="test_without_repaint_box"/>
+          <include name="test_dragbox_in_dropbox"/>
+          <include name="test_proceed_with_generating_token_adding_cookie"/>
+          <include name="test_grid_red_box"/>
+          <include name="test_launch_window_enter_text_proceed"/>
+          <include name="test_proceed_without_generating_token"/>
+          <include name="test_leave_popup_window_textfield_empty_and_proceed"/>
+          <include name="test_proceed_with_generating_token_but_not_adding_cookie"/>
+          <include name="start"/>
         </methods>
       </class> <!-- com.qait.automation.Tatocautomation.Alltest -->
     </classes>

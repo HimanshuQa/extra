@@ -19,6 +19,7 @@ public class FrameDungeon {
     public void initiaiseElements() {
         PageFactory.initElements(this.web, this);
     }
+    
     public FrameDungeon(WebDriver web) {
         this.web = web;
     }
@@ -28,7 +29,7 @@ public class FrameDungeon {
         initiaiseElements();
         return Heading.getText().contains("Frame Dungeon") && web.getCurrentUrl().equals("http://10.0.1.86/tatoc/basic/frame/dungeon");
     }
-    public Boolean click_without_repaint(){
+    public Boolean proceed_without_repaint(){
 
         initiaiseElements();
         web.switchTo().frame("main");
@@ -45,14 +46,14 @@ public class FrameDungeon {
         initiaiseElements();
         this.web.switchTo().frame("main");
         Assert.assertEquals(this.web.findElement(By.id("answer")).isDisplayed(), true); 
-        String box1 = web.findElement(By.id("answer")).getAttribute("class");
+        String box1 = web.findElement(By.id("answer")).getCssValue("background-color");
         int n=0;
         while (n==0) {
 
             web.findElement(By.cssSelector("a")).click(); //click on repaint box 2
             web.switchTo().frame("child"); //goto child for box2
             Assert.assertEquals(this.web.findElement(By.id("answer")).isDisplayed(), true); 
-            String box2 = web.findElement(By.id("answer")).getAttribute("class");// get second box color
+            String box2 = web.findElement(By.id("answer")).getCssValue("background-color");// get second box color
             web.switchTo().parentFrame(); //goback to parent form for repainting box
             if (box1.equals(box2)) {
                 web.findElements(By.cssSelector("a")).get(1).click(); //clicking on proceed
