@@ -53,7 +53,7 @@ public class Cookie {
         
     }
     
-    public Boolean proceed_with_generating_token_but_not_adding_cookie(){
+    public void proceed_with_generating_token_but_not_adding_cookie(){
     	
     	web.get("http://10.0.1.86/tatoc/basic/cookie");
     	initiaiseElements();
@@ -64,29 +64,32 @@ public class Cookie {
             String value = token.getText().split("Token: ")[1];			
             Assert.assertFalse(value.isEmpty());
         } catch (Exception e) {
-			Assert.assertTrue(false,"token not generated");
+			Assert.fail("token not generated");
 		}
         
         proceed.click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
     }
     
-    public Boolean proceed_with_generating_token_adding_cookie(){
+    public void proceed_with_generating_token_adding_cookie(){
     	
     	web.get("http://10.0.1.86/tatoc/basic/cookie");
     	initiaiseElements();
     	Assert.assertEquals(proceed.isDisplayed(), true);
         Assert.assertEquals(generate.isDisplayed(), true);
         generate.click();
+        String value = null;
+
         try {
-            String value = token.getText().split("Token: ")[1];			
+            value = token.getText().split("Token: ")[1];			
             Assert.assertFalse(value.isEmpty());
         } catch (Exception e) {
-			Assert.assertTrue(false,"token not generated");
+			Assert.fail("token not generated");
 		}
+        this.web.manage().addCookie(new org.openqa.selenium.Cookie("Token", value, "/")); //add cookie
         proceed.click();
         end = new Endpage(web);
-        return end.isDisplayed();
+        Assert.assertTrue(end.isDisplayed(),"end page is not displayed");
     }
 }

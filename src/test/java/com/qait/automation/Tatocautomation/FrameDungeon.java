@@ -29,30 +29,30 @@ public class FrameDungeon {
         initiaiseElements();
         return Heading.getText().contains("Frame Dungeon") && web.getCurrentUrl().equals("http://10.0.1.86/tatoc/basic/frame/dungeon");
     }
-    public Boolean proceed_without_repaint(){
+    public void proceed_without_repaint(){
 
         initiaiseElements();
         web.switchTo().frame("main");
-        Assert.assertEquals(this.web.findElement(By.id("answer")).isDisplayed(), true);
-        Assert.assertEquals(this.web.findElement(By.cssSelector("body > center > a:nth-child(9)")).isDisplayed(), true);
+        Assert.assertTrue(this.web.findElement(By.id("answer")).isDisplayed());
+        Assert.assertTrue(this.web.findElement(By.cssSelector("body > center > a:nth-child(9)")).isDisplayed());
         
         this.web.findElement(By.cssSelector("body > center > a:nth-child(9)")).click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
     }
-    public Boolean repaint_box() {
+    public void repaint_box() {
         
         this.web.get("http://10.0.1.86/tatoc/basic/frame/dungeon");
         initiaiseElements();
         this.web.switchTo().frame("main");
-        Assert.assertEquals(this.web.findElement(By.id("answer")).isDisplayed(), true); 
+        Assert.assertTrue(this.web.findElement(By.id("answer")).isDisplayed()); 
         String box1 = web.findElement(By.id("answer")).getCssValue("background-color");
         int n=0;
         while (n==0) {
 
             web.findElement(By.cssSelector("a")).click(); //click on repaint box 2
             web.switchTo().frame("child"); //goto child for box2
-            Assert.assertEquals(this.web.findElement(By.id("answer")).isDisplayed(), true); 
+            Assert.assertTrue(this.web.findElement(By.id("answer")).isDisplayed()); 
             String box2 = web.findElement(By.id("answer")).getCssValue("background-color");// get second box color
             web.switchTo().parentFrame(); //goback to parent form for repainting box
             if (box1.equals(box2)) {
@@ -62,7 +62,7 @@ public class FrameDungeon {
         }
         
         drag = new Drag(this.web);
-        return drag.isDisplayed();
+        Assert.assertTrue(drag.isDisplayed());
 
     }
 }

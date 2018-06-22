@@ -38,18 +38,18 @@ public class Popup {
         return heading.getText().contains("Popup Windows") && web.getCurrentUrl().equals("http://10.0.1.86/tatoc/basic/windows");
     }
     
-    public Boolean proceed_without_launching_window(){
+    public void proceed_without_launching_window(){
     	initiaiseElements();
     	Assert.assertEquals(proceed.isDisplayed(), true);
         Assert.assertEquals(launch_popup.isDisplayed(), true);
         
         proceed.click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
   
     }
     
-    public Boolean leave_popup_window_textfield_empty_and_proceed() {
+    public void leave_popup_window_textfield_empty_and_proceed() {
     	web.get("http://10.0.1.86/tatoc/basic/windows");
     	initiaiseElements();
     	Assert.assertEquals(proceed.isDisplayed(), true);
@@ -75,11 +75,11 @@ public class Popup {
 
         proceed.click(); //click on proceed
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
   
 	}
     
-    public Boolean launch_window_enter_text_proceed(){
+    public void launch_window_enter_text_proceed(){
     	
     	web.get("http://10.0.1.86/tatoc/basic/windows");
     	initiaiseElements();
@@ -106,6 +106,6 @@ public class Popup {
         proceed.click(); //click on proceed
         
         cookie = new Cookie(web);
-        return cookie.isDisplayed();
+        Assert.assertTrue(cookie.isDisplayed());
     }
 }

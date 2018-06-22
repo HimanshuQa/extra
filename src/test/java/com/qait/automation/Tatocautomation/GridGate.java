@@ -35,20 +35,20 @@ public class GridGate {
         initiaiseElements();
     }
 
-    public Boolean click_on_redbox() {
+    public void click_on_redbox() {
         openPage();
         Assert.assertTrue(red_box.get(0).isDisplayed(), "redbox not displayed");
         red_box.get(0).click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
     }
 
-    public Boolean click_on_greenbox() {
+    public void click_on_greenbox() {
         openPage();
 
         Assert.assertTrue(green_box.isDisplayed(), "greenbox not displayed");
         green_box.click();
         frame = new FrameDungeon(this.web);
-        return frame.isDisplayed();
+        Assert.assertTrue(frame.isDisplayed());
     }
 }

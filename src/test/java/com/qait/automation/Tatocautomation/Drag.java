@@ -49,7 +49,7 @@ public class Drag {
         PageFactory.initElements(this.web, this);
     }
 
-    public Boolean click_on_proceed_without_drag_drop(){
+    public void click_on_proceed_without_drag_drop(){
 
         initiaiseElements();
         Assert.assertEquals(dropbox.isDisplayed(), true);
@@ -57,10 +57,10 @@ public class Drag {
         
         proceed.click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
     }
     
-    public Boolean moving_dragbox_to_somwhere_but_not_in_dropbox()
+    public void moving_dragbox_to_somwhere_but_not_in_dropbox()
     {
         this.web.navigate().back();
         initiaiseElements();
@@ -71,11 +71,11 @@ public class Drag {
         actions.clickAndHold(dragbox).moveByOffset(130, 0).release().perform();
         proceed.click();
         error = new Errorpage(this.web);
-        return error.getErrorMessage().contains("The page you are looking for does not exist");
+        Assert.assertTrue(error.getErrorMessage().contains("The page you are looking for does not exist"));
    
     }
     
-    public Boolean dragbox_in_dropbox(){
+    public void dragbox_in_dropbox(){
 
     	this.web.navigate().back();
         initiaiseElements();
@@ -86,7 +86,7 @@ public class Drag {
         actions.dragAndDrop(dragbox, dropbox).build().perform();
         proceed.click();
         popup = new Popup(this.web);
-        return popup.isDisplayed();
+        Assert.assertTrue(popup.isDisplayed());
 
     }
 
